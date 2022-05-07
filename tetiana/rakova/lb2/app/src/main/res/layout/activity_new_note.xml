@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewNoteActivity">
+
+    <ImageButton
+        android:id="@+id/addIcon"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_weight="1"
+        android:onClick="openGallery"
+        app:layout_constraintBottom_toTopOf="@+id/line1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintTop_toBottomOf="@+id/addIcon"
+        app:layout_constraintBottom_toTopOf="@+id/line2"
+        android:id="@+id/line1">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:textSize="30sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Name: "
+            app:layout_constraintRight_toLeftOf="@+id/nameId"
+            />
+
+        <EditText
+            android:id="@+id/nameId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/name"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toTopOf="@+id/line3"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        android:id="@+id/line2">
+
+        <TextView
+            android:id="@+id/addNote"
+            android:layout_width="0dp"
+            android:textSize="30sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Description: "
+            app:layout_constraintRight_toLeftOf="@+id/imageButton3"
+            />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/addNote"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toTopOf="@+id/line4"
+        app:layout_constraintTop_toBottomOf="@+id/line2"
+        android:id="@+id/line3">
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="0dp"
+            android:textSize="30sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Importance: "
+            app:layout_constraintRight_toLeftOf="@+id/levelId"
+            />
+
+
+
+        <Spinner
+            android:id="@+id/levelId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/level" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line3"
+        android:id="@+id/line4">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:textSize="30sp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Text: "
+            app:layout_constraintBottom_toTopOf="@+id/textId"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/textId"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:ems="100"
+            android:imeOptions="actionDone"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintTop_toBottomOf="@+id/text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save note"
+            android:onClick="saveNote"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
